@@ -1,37 +1,27 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getModifierFor = exports.generateAbilityScore = exports.DnDCharacter = void 0;
-exports.DnDCharacter = {
-    generateAbilityScore: generateAbilityScore,
-    getModifierFor: getModifierFor
-};
-function generateAbilityScore() {
-    var fourThrows = 4;
-    var constitution = [];
-    var max = Math.ceil(6);
-    var min = Math.floor(1);
-    for (var i = 0; i < fourThrows; i++) {
-        constitution.push(Math.floor(Math.random() * (max - min + 1) + min));
+exports.DnDCharacter = void 0;
+var DnDCharacter = /** @class */ (function () {
+    function DnDCharacter() {
+        this.strength = DnDCharacter.generateAbilityScore();
+        this.dexterity = DnDCharacter.generateAbilityScore();
+        this.constitution = DnDCharacter.generateAbilityScore();
+        this.intelligence = DnDCharacter.generateAbilityScore();
+        this.wisdom = DnDCharacter.generateAbilityScore();
+        this.charisma = DnDCharacter.generateAbilityScore();
+        this.hitpoints = 10 + DnDCharacter.getModifierFor(this.constitution);
     }
-    var minElement = Number.MAX_VALUE;
-    var index = 0;
-    for (var i = 0; i < constitution.length; i++) {
-        var element = constitution[i];
-        if (element < minElement) {
-            minElement = element;
-            index = i;
-        }
-    }
-    constitution.splice(index, 1);
-    var sumArray = constitution.reduce(function (a, b) { return a + b; }, 0);
-    getModifierFor(sumArray);
-}
-exports.generateAbilityScore = generateAbilityScore;
-generateAbilityScore();
-function getModifierFor(constitution) {
-    var hitpoints = 10;
-    var diff = Math.floor((constitution - hitpoints) / 2);
-    return diff;
-}
-exports.getModifierFor = getModifierFor;
+    DnDCharacter.generateAbilityScore = function () {
+        var min = 3;
+        var max = 18;
+        return Math.round(Math.random() * (max - min) + min);
+    };
+    DnDCharacter.getModifierFor = function (constitution) {
+        var hitpoints = 10;
+        var diff = Math.floor((constitution - hitpoints) / 2);
+        return diff;
+    };
+    return DnDCharacter;
+}());
+exports.DnDCharacter = DnDCharacter;
 //# sourceMappingURL=dnd-character.js.map
