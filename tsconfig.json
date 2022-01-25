@@ -1,7 +1,12 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
-        "sourceMap": true
-      }
+  "compilerOptions": {
+    "lib": [
+      "ES5",
+      "ES2017",
+      "DOM"
+    ],
+    "target": "es5",
+    "module": "commonjs",
+    "sourceMap": true
+  }
 }
