@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.COLORS = exports.colorCode = void 0;
-var colorCode = function (color) {
+const colorCode = (color) => {
     return exports.COLORS.indexOf(color);
 };
 exports.colorCode = colorCode;

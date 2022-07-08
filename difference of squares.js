@@ -1,42 +1,29 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var Squares = /** @class */ (function () {
-    function Squares(number) {
+class Squares {
+    constructor(number) {
         this.number = number;
     }
-    Object.defineProperty(Squares.prototype, "sumOfSquares", {
-        get: function () {
-            var sum = 0;
-            for (var i = 1; i <= this.number; i++) {
-                sum += (i * i);
-            }
-            return sum;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Squares.prototype, "squareOfSum", {
-        get: function () {
-            var sum = 0;
-            for (var i = 1; i <= this.number; i++) {
-                sum += i;
-            }
-            return sum * sum;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Squares.prototype, "difference", {
-        get: function () {
-            return this.squareOfSum - this.sumOfSquares;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    return Squares;
-}());
+    get sumOfSquares() {
+        let sum = 0;
+        for (let i = 1; i <= this.number; i++) {
+            sum += (i * i);
+        }
+        return sum;
+    }
+    get squareOfSum() {
+        let sum = 0;
+        for (let i = 1; i <= this.number; i++) {
+            sum += i;
+        }
+        return sum * sum;
+    }
+    get difference() {
+        return this.squareOfSum - this.sumOfSquares;
+    }
+}
 exports.default = Squares;
-var square = new Squares(10);
+const square = new Squares(10);
 console.log(square.difference);
 console.log(square.squareOfSum);
 console.log(square.sumOfSquares);

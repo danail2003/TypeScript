@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.decodedResistorValue = void 0;
 function decodedResistorValue(colors) {
-    var output = '';
-    for (var i = 0; i < colors.length - 1; i++) {
+    let output = '';
+    for (let i = 0; i < colors.length - 1; i++) {
         switch (colors[i]) {
             case 'black':
                 output += 0;
@@ -39,7 +39,7 @@ function decodedResistorValue(colors) {
                 break;
         }
     }
-    var isZero = Number(output) % 10 === 0;
+    let isZero = Number(output) % 10 === 0;
     if (colors[colors.length - 1] === 'red' && isZero) {
         output = (Number(output) / 10).toString();
         return output + " kiloohms";

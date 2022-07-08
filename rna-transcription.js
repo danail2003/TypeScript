@@ -2,8 +2,8 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.toRna = void 0;
 function toRna(nucleotide) {
-    var rna = '';
-    for (var i = 0; i < nucleotide.length; i++) {
+    let rna = '';
+    for (let i = 0; i < nucleotide.length; i++) {
         if (nucleotide[i] === 'A') {
             rna += 'U';
         }

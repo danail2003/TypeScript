@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DnDCharacter = void 0;
-var DnDCharacter = /** @class */ (function () {
-    function DnDCharacter() {
+class DnDCharacter {
+    constructor() {
         this.strength = DnDCharacter.generateAbilityScore();
         this.dexterity = DnDCharacter.generateAbilityScore();
         this.constitution = DnDCharacter.generateAbilityScore();
@@ -11,17 +11,16 @@ var DnDCharacter = /** @class */ (function () {
         this.charisma = DnDCharacter.generateAbilityScore();
         this.hitpoints = 10 + DnDCharacter.getModifierFor(this.constitution);
     }
-    DnDCharacter.generateAbilityScore = function () {
-        var min = 3;
-        var max = 18;
+    static generateAbilityScore() {
+        const min = 3;
+        const max = 18;
         return Math.round(Math.random() * (max - min) + min);
-    };
-    DnDCharacter.getModifierFor = function (constitution) {
-        var hitpoints = 10;
-        var diff = Math.floor((constitution - hitpoints) / 2);
+    }
+    static getModifierFor(constitution) {
+        let hitpoints = 10;
+        let diff = Math.floor((constitution - hitpoints) / 2);
         return diff;
-    };
-    return DnDCharacter;
-}());
+    }
+}
 exports.DnDCharacter = DnDCharacter;
 //# sourceMappingURL=dnd-character.js.map

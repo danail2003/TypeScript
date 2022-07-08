@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.isPangram = void 0;
 function isPangram(text) {
-    var set = new Set(text.toLowerCase().replace(/[^a-zA-Z]/g, ''));
+    const set = new Set(text.toLowerCase().replace(/[^a-zA-Z]/g, ''));
     return set.size === 26;
 }
 exports.isPangram = isPangram;

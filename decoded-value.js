@@ -2,15 +2,15 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.decodedValue = void 0;
 function decodedValue(colors) {
-    var output = '';
-    var length = 0;
+    let output = '';
+    let length = 0;
     if (colors.length > 2) {
         length = 2;
     }
     else {
         length = colors.length;
     }
-    for (var i = 0; i < length; i++) {
+    for (let i = 0; i < length; i++) {
         switch (colors[i]) {
             case 'black':
                 output += 0;

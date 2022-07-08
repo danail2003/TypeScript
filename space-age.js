@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.age = void 0;
 function age(planet, seconds) {
-    var orbitalYears = {
+    let orbitalYears = {
         mercury: 0.2408467,
         venus: 0.61519726,
         earth: 365.25,
@@ -12,12 +12,12 @@ function age(planet, seconds) {
         uranus: 84.016846,
         neptune: 164.79132,
     };
-    var secondMinutesDays = {
+    let secondMinutesDays = {
         seconds: 60,
         minutes: 60,
         days: 24,
     };
-    var years = 0;
+    let years = 0;
     switch (planet) {
         case 'earth':
             years = +(seconds / secondMinutesDays.seconds / secondMinutesDays.minutes / secondMinutesDays.days / orbitalYears.earth).toFixed(2);
